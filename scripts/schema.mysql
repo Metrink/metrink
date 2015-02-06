@@ -1,0 +1,91 @@
+create database metrink;
+
+use metrink;
+
+DROP TABLE IF EXISTS `actions`;
+CREATE TABLE `actions` (
+  `actionId` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `actionName` varchar(32) NOT NULL,
+  `type` text NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`actionId`),
+  UNIQUE KEY `actionName` (`actionName`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `alerts`;
+CREATE TABLE `alerts` (
+  `alertId` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `alertQuery` varchar(256) NOT NULL,
+  `modifiedTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `enabled` bit(1) NOT NULL DEFAULT b'1',
+  PRIMARY KEY (`alertId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `dashboards`;
+CREATE TABLE `dashboards` (
+  `dashboardId` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `dashboardName` varchar(255) NOT NULL,
+  `definition` longtext NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`dashboardId`),
+  UNIQUE KEY `dashboardId` (`dashboardId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `metrics_devices`;
+CREATE TABLE `metrics_devices` (
+  `device_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `device` varchar(64) NOT NULL,
+  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`device_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `metrics_groups`;
+CREATE TABLE `metrics_groups` (
+  `group_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `groupName` varchar(64) NOT NULL,
+  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`group_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `metrics_names`;
+CREATE TABLE `metrics_names` (
+  `name_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`name_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `unique_metrics`;
+CREATE TABLE `unique_metrics` (
+  `deviceId` bigint(20) unsigned NOT NULL,
+  `groupId` bigint(20) unsigned NOT NULL,
+  `nameId` bigint(20) unsigned NOT NULL,
+  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `ownerId_2` (`deviceId`,`groupId`,`nameId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `userId` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL DEFAULT '',
+  `password` varchar(1024) NOT NULL,
+  `name` varchar(256) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastLogin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `timezone` varchar(128) NOT NULL DEFAULT 'US/Eastern',
+  `defaultDashboardId` bigint(20) unsigned DEFAULT NULL,
+  `role` varchar(24) NOT NULL DEFAULT 'USER',
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+DROP VIEW IF EXISTS `unique_metrics_view`;
+CREATE VIEW `unique_metrics_view` AS
+  select `metrics_devices`.`device` AS `device`,
+         `metrics_groups`.`groupName` AS `groupName`,
+         `metrics_names`.`name` AS `name`
+  from (((`unique_metrics` join `metrics_devices` on ((`metrics_devices`.`device_id` = `unique_metrics`.`deviceId`)))
+                           join `metrics_groups`  on ((`metrics_groups`.`group_id` = `unique_metrics`.`groupId`)))
+                           join `metrics_names` on((`metrics_names`.`name_id` = `unique_metrics`.`nameId`)));
+
+
