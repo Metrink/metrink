@@ -2,6 +2,8 @@
 
 Metrink is a metric sink. It records metrics of any type, and then allows you to graph said metrics and apply transformation functions.
 
+**Note: This project is VERY much in flux. It is being open source from production code, and as we all know, production ready does NOT mean open source ready.** 
+
 ## Building
 
 ```
@@ -51,19 +53,6 @@ Metrink Collector:
 
 ```term
 $ java -jar ./metrink-web/target/metrink-collector-*.jar --settings settings.yml server configuration.yml
-```
-
-Metrink [Liquibase Integration](http://www.dropwizard.io/manual/migrations/):
-
-```term
-# Update the database to the latest configuration in metrink-collector/src/main/resources/migrations.xml
-$ java -jar ./metrink-web/target/metrink-collector-*.jar --settings settings.yml db migrate configuration.yml
-
-# Reset the database. (This might not erase stored procedures.)
-$ java -jar ./metrink-web/target/metrink-collector-*.jar --settings settings.yml db drop-all --confirm-delete-everything configuration.yml
-
-# Look at the current schema.
-$ java -jar ./metrink-web/target/metrink-collector-*.jar --settings settings.yml db dump configuration.yml
 ```
 
 General notes:
