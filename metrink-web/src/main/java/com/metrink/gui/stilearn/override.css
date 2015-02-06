@@ -1,0 +1,135 @@
+/* Replacing the default STILearn font header with Open Sans Condensed. */
+.navbar-helper .panel-sitename h1,
+.navbar-helper .panel-sitename h2,
+.navbar-helper .panel-sitename h3,
+.navbar-helper .panel-sitename h4,
+.navbar-helper .panel-sitename h5,
+.navbar-helper .panel-sitename h6{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* The Stilearn template takes up too much vertical height.
+ */
+/* decreasing header to 40px tall */
+header.header {
+    min-height: 40px;
+    height: 40px;
+    padding-top: 0;
+}
+
+/* vertical align top menu contents to center */
+.navbar-helper .panel-sitename h2 {
+    font-size: 1.5em;
+    line-height: 40px;
+}
+.navbar-helper .row-fluid [class*="span"] {
+    line-height: 40px;
+}
+
+/* shift the left toolbar and main content up */
+.side-left {
+    top: 40px;
+}
+.content {
+    margin-top: 40px;
+    margin-bottom: -42px;
+}
+
+/* decreasing vertical padding within the content section */
+.content .content-header {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.content .content-header h2 {
+    font-size: 1em;
+    line-height: 2em;
+}
+.content .content-body {
+    padding-top: 5px;
+}
+form.form-inline {
+    margin-bottom: 5px;
+}
+form.form-inline input, form.form-inline button,
+form.form-inline .input-append .add-on,
+form.form-inline .input-prepend .add-on {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Stilearn defaulted its spans to shift left to account for their toolbar. This padding alteration breaks the navbar
+ * buttons positioning when floated right, causing them to shift off the screen. Reseting the margins to fix it.
+ */
+.navbar-helper .row-fluid [class*="span"] {
+    margin-left: 2.127659574468085%;
+}
+.navbar-helper .row-fluid [class*="span"]:first-child {
+    margin-left: 0;
+}
+
+/* When using tabs in modal dialogs, any JavaScript widgets that extend beyond the lowest point in the tab will trigger
+ * scrollbars on the right side. These scrollbars won't extend to the bottom of the dialog which looks awkward.
+ */
+.tab-content {
+    overflow: visible;
+}
+
+/* The default margins on h? tags are too condensed vertically */
+h2, h3, h4, h5, h6, h7 {
+    margin-top: 20px;
+}
+
+/* The default headings are enormous */
+.content .content-body h1 {
+    font-size: 24.5px;
+}
+.content .content-body h2 {
+    font-size: 17.5px;
+    line-height: 20px;
+}
+.content .content-body h3 {
+    font-size: 14px;
+    line-height: 20px;
+}
+.content .content-body h4,
+.content .content-body h5,
+.content .content-body h6 {
+    font-size: 11.9px;
+}
+
+/* The default link in content-body is black, which is impossible to distinguish from text */
+.content .content-body a {
+    color: #0088cc;
+    text-decoration: underline;
+}
+.content .content-body a:hover,
+.content .content-body a:focus {
+    color: #005580;
+}
+
+/* Paragraph tags within blockquotes are inexplicably larger. This distorts markdown blockquotes with the alert class */
+.content .content-body blockquote.alert>p {
+    font-size: inherit;
+}
+
+/* Move the drop-down box for the user info over a bit */
+.user-group .dropdown-user {
+    margin-left: 0px;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: inherit;
+}
+
+/* Make the panel headers a bit smaller */
+.box .box-header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.box .box-body {
+    /* padding: 10px 10px 10px 10px; */
+}

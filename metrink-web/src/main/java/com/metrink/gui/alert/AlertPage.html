@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>Metrink</title>
+</head>
+<body>
+    <wicket:extend>
+    
+        <form wicket:id="form" class="form-inline">
+          <div class="input-append">
+              <input type="text" id="alert-query" wicket:id="alert-query"></input>
+<!--               
+              <a href="#" wicket:id="query-wizard-link" id="query-wizard-link" class="add-on"><i class="icon-wrench"></i></a>
+ -->               
+          </div>
+          
+          <input type="submit" id="alert-button" wicket:id="alert-button" value="Add Alert" class="btn btn-primary" />
+          <button id="cancel-button" wicket:id="cancel-button" class="btn" style="padding-top: 0; padding-bottom: 0;">Clear</button>
+        </form>
+<!--         
+        <div wicket:id="query-wizard"></div>
+ -->        
+        <h3>Alerts</h3>
+        <table class="table table-bordered table-condensed" wicket:id="alert-table"></table>
+        <wicket:fragment wicket:id="enabled-fragment">
+            <input type="checkbox" wicket:id="enabled" />
+        </wicket:fragment>        
+        <wicket:fragment wicket:id="link-fragment">
+            <a wicket:id="link"><span wicket:id="query"></span></a>
+        </wicket:fragment>
+        <wicket:fragment wicket:id="delete-fragment">
+            <a wicket:id="delete">Delete</a>
+        </wicket:fragment>        
+
+        <!-- Auto-sizing for the input box -->
+        <script type="text/javascript">
+          var resizeSearchQuery = function() {
+            // will break if there is right padding on the form
+            var form = $('#alert-query').parents('form');
+            var right_max = form.offset().left + form.outerWidth();
+            
+            var search_query_left = $('#alert-query').offset().left;
+            var search_query_padding = $('#alert-query').outerWidth() - $('#alert-query').width();
+            
+            var query_wizard_left = $('#alert-button').offset().left;
+            var cancel_btn_right = $('#cancel-button').offset().left + $('#cancel-button').outerWidth();
+            var allocated = cancel_btn_right - query_wizard_left;
+            
+            // total hack, see https://bitbucket.org/wspeirs/metrink/issue/88/alert-query-wizard-needs-updating
+            //$('#alert-query').css('width', form.outerWidth() - $('#cancel-button').outerWidth() - 20 + 'px');
+            $('#alert-query').css('width', right_max - search_query_left - search_query_padding - allocated - 5 + 'px');
+          };
+          
+          // resize on laod
+          $(resizeSearchQuery);
+        </script>
+
+	</wicket:extend>
+</body>
+</html>

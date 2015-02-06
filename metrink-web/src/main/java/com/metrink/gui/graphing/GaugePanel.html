@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<wicket:panel>
+
+  <div id="gauge-div"></div>
+  
+  <script type="text/javascript" wicket:id="gauge-data"></script>
+  
+  <script type="text/javascript">
+    var base = [5, 3.5, 1.5];
+
+    var margin = {top: 5, right: 5, bottom: 5, left: 5};
+
+    var width = 200 - margin.left - margin.right,
+        height = 30 - margin.top - margin.bottom;
+
+    var x = d3.scale.linear().domain([0, 5]).range([0, width]);
+
+    var y = d3.scale.linear().range([0, height]);
+
+    var chart = d3.select('#gauge-div')
+                  .append('svg')
+                  .attr('class', 'gauge')
+                  .attr('width', width)
+                  .attr('height', height);
+
+    chart.append('g')
+         .selectAll('rect')
+         .data(base)
+         .enter()
+         .append("rect")
+         .attr("x", 0)
+         .attr("y", 0)
+         .attr("width", x)
+         .attr("height", height)
+         .attr("fill", function (x) { if(x == base[2]) return d3.rgb(100, 255, 0);
+                                      if(x == base[1]) return d3.rgb(245, 255, 0);
+                                      if(x == base[0]) return d3.rgb(255, 0, 0);
+                                    });
+
+    chart.append('g')
+         .selectAll('rect')
+         .data(score)
+         .enter()
+         .append("rect")
+         .attr("rx", 3)
+         .attr("ry", 3)
+         .attr("x", 0)
+         .attr("y", 10)
+         .attr("width", x)
+         .attr("height", height-10)
+         .attr("fill", d3.rgb(200, 200, 200));
+      
+  </script>
+</wicket:panel>
+</html>

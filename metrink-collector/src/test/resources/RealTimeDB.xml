@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+  <table name="realtime">
+    <column>company</column><column>client</column><column>device</column><column>groupName</column><column>time_stamp</column><column>name</column><column>value</column><column>units</column>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989501001</value><value>cpu</value><value>25</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989502002</value><value>cpu</value><value>27</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989503003</value><value>cpu</value><value>29</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989504004</value><value>cpu</value><value>31</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989505005</value><value>cpu</value><value>33</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989506006</value><value>cpu</value><value>35</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989507007</value><value>cpu</value><value>37</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989508008</value><value>cpu</value><value>39</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989509009</value><value>cpu</value><value>41</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989510010</value><value>cpu</value><value>43</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>localhost</value><value>system</value><value>1361989611011</value><value>cpu</value><value>43</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989501001</value><value>cpu</value><value>25</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989502002</value><value>cpu</value><value>27</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989503003</value><value>cpu</value><value>29</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989504004</value><value>cpu</value><value>31</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989505005</value><value>cpu</value><value>33</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989506006</value><value>cpu</value><value>35</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989507007</value><value>cpu</value><value>37</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989508008</value><value>cpu</value><value>39</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989509009</value><value>cpu</value><value>41</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989510010</value><value>cpu</value><value>43</value><value>%</value></row>
+    <row><value>metrink</value><value>educated-solutions</value><value>remotehost</value><value>system</value><value>1361989611011</value><value>cpu</value><value>43</value><value>%</value></row>
+  </table>
+</dataset>

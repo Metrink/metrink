@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<wicket:panel>
+
+  <div id="graph-div"></div>
+  
+  <script type="text/javascript" wicket:id="graph-data"></script>
+  
+  <script type="text/javascript">
+    //follows the convention laid-out here: http://bl.ocks.org/mbostock/3019563
+    var margin = {top: 20, right: 30, bottom: 20, left: 30};
+  
+    var width = 250 - margin.left - margin.right,
+        height = 250 - margin.top - margin.bottom;
+    
+    var innerRad = 50, outerRad = 100;
+
+    var pie = d3.layout.pie().value(function(d) { return d.v; });
+    var color = d3.scale.category10();
+                    
+    var arc = d3.svg.arc()
+                .innerRadius(innerRad)
+                .outerRadius(outerRad);
+  
+    var chart = d3.select("#graph-div")
+                  .append("svg:svg")
+                  .data([dataset])
+                  .attr("class", "chart")
+                  .attr("width", width + margin.left + margin.right)
+                  .attr("height", height + margin.top + margin.bottom)
+                  .append("svg:g")
+                  .attr("transform", "translate(" + (margin.left + outerRad) + "," + (margin.top + outerRad) + ")");
+                  
+    var arcs = chart.selectAll("g.slice")
+                    .data(pie)
+                    .enter()
+                    .append("svg:g")
+                    .attr("class", "slice");
+  
+    arcs.append("svg:path")
+        .style("fill", function(d, i){
+                return color(i);
+            })
+         .attr("d", arc);
+  
+    // text for each arc
+    arcs.append("svg:text")
+        .attr("transform", function(d) {
+                d.innerRadius = innerRad;
+                d.outerRadius = outerRad;
+                return "translate(" + arc.centroid(d) + ")";        //this gives us a pair of coordinates like [50, 50]
+            })
+            .attr("text-anchor", "middle")                          //center the text on it's origin
+            .text(function(d, i) { return dataset[i].k; });
+  
+    // text in the middle of the pie
+    chart.append("svg:text")
+         .attr("text-anchor", "middle")
+         .text(centerVal);
+  
+  </script>
+</wicket:panel>
+</html>

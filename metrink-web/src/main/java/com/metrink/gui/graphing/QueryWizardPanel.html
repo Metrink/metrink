@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<wicket:panel>
+
+    <style type="text/css">
+        div.wicket-modal h3.w_captionText {
+            color: black;
+            font-size: 12pt;
+            margin-top: -10px;
+        }
+        
+        div.wicket-modal div.w_content {
+            margin-top: 10px;
+        }
+        div.bootstrap-datetimepicker-widget {
+            z-index: 30000;
+        }
+        div.wizard-documentation {
+            /* the wizard itself has no padding */
+            margin: 0 1em;
+        }
+        div.wizard-documentation h3 {
+            /* header padding is too much inside the wizard */
+            font-size: 1em;
+            line-height: 1.5em;
+            margin: 0;
+        }
+    </style>
+
+    <div wicket:id="tabs"></div>
+    <wicket:fragment wicket:id="metrics-wizard">
+        <form class="form-horizontal" wicket:id="wizard-form">
+            <div wicket:id="start-end"></div>
+            
+            <div class="control-group">
+              <label class="control-label" for="device">Device</label>
+              <div class="controls">
+                  <input type="text" wicket:id="device"></input>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label" for="group">Group</label>
+              <div class="controls">
+                <select class="chzn-select" wicket:id="group"></select>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label" for="metric">Metric</label>
+              <div class="controls">
+                <select class="chzn-select" wicket:id="metric"></select>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label" for="result">Result</label>
+              <div class="controls">
+                <input disabled wicket:id="result" style="width: 400px;" type="text"></input>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <div class="controls">
+                <button wicket:id="insert-button" class="btn">Insert</button>
+              </div>
+            </div>
+        </form>
+    </wicket:fragment>
+    <wicket:fragment wicket:id="functions-wizard">
+        <form class="form-horizontal" wicket:id="wizard-form">
+            <div class="control-group">
+              <label class="control-label">Operator</label>
+              <div class="controls">
+                <select class="chzn-select" wicket:id="operators"></select>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Function</label>
+              <div class="controls">
+                <select class="chzn-select" wicket:id="functions"></select>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <div class="controls">
+                <button wicket:id="insert-button" class="btn">Insert</button>
+              </div>
+            </div>
+            
+            <div class="well wizard-documentation" wicket:id="documentation"><p wicket:id="content"/></div>
+        </form>
+    </wicket:fragment>
+  
+</wicket:panel>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metrink Alert</title>
+    <style type="text/css">
+<![CDATA[
+        table td {border-collapse: collapse;}
+    ]]>
+    </style>
+  </head>
+  <body style="width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
+
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100% !important; line-height: 100% !important; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0;"><tr><td valign="top" style="border-collapse: collapse;"> 
+            <h3 style="color: #626262 !important;">Metrink Alert</h3>
+            <h4 style="color: #626262 !important;">Metric</h4>
+            <p style="margin: 1em 0;">$metric</p>
+            <h4 style="color: #626262 !important;">Triggered</h4>
+            <p style="margin: 1em 0;">$alertQuery</p>
+            <h4 style="color: #626262 !important;">Resources</h4>
+            <ul><li style="margin-bottom: 1.5em;">
+                    <a href="$graphLink" title="Graph Link" style="color: #0088cc !important;">View Graph</a>
+                </li>
+                <li style="margin-bottom: 1.5em;">
+                    <a href="$graphLinkCorrelated" title="Graph Link Correlated" style="color: #0088cc !important;">View Graph Correlated</a>
+                </li>
+            </ul></td>
+    </tr></table></body>
+</html>

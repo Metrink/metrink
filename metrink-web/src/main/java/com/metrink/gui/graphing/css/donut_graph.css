@@ -1,0 +1,13 @@
+@CHARSET "ISO-8859-1";
+.chartWithOverlay {
+    position: relative;
+    width: 500px;
+}
+
+.overlay-value {
+    position: absolute;
+}
+
+.overlay-title {
+    position: absolute;
+}

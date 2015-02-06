@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>Metrink</title>
+</head>
+<body>
+    <wicket:extend>
+        <form wicket:id="form" class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="dashboardName">Name</label>
+                <div class="controls">
+                    <input type="text" wicket:id="dashboardName" class="input-xxlarge"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="definition">Definition</label>
+                <div class="controls">
+                    <textarea wicket:id="definition" class="input-block-level" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls btn-group">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                    <button wicket:id="cancel" class="btn">Cancel</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls btn-group">
+                    <h5>Example</h5>
+                    <pre>
+- row:
+  - graph: -30m m("*", "cpu", "load")
+  - graph: -30m m("*", "memory", "free memory")
+- row:
+  - graph: -30m m("*", "network", "eth0 transmit rate", -1d)
+  - graph: -30m m("*", "network", "eth0 receive rate", -1d)
+                    </pre>
+                </div>
+            </div>
+        </form>
+    </wicket:extend>
+</body>
+</html>

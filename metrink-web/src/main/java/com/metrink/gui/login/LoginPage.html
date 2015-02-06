@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+    <div class="container">
+        <div class="signin-form row-fluid">
+            <div wicket:id="feedback" class="span10 offset1 text-error"></div>
+        </div>
+        <div class="row-fluid">
+            <!--Sign In-->
+            <div class="span4 offset4">
+                <div class="box corner-all">
+                    <div class="box-header grd-teal color-white corner-top">
+                        <span>Sign in</span>
+                    </div>
+                    <div class="box-body bg-white">
+                        <form wicket:id="login-form" id="sign-in" method="post">
+                            <div class="control-group">
+                                <label class="control-label">Email</label>
+                                <div class="controls">
+                                    <input wicket:id="username" type="text" class="input-block-level" data-validate="{required: true, messages:{required:'Please enter field username'}}" name="login_username" id="login_username" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Password</label>
+                                <div class="controls">
+                                    <input wicket:id="password" type="password" class="input-block-level" data-validate="{required: true, messages:{required:'Please enter field password'}}" name="login_password" id="login_password" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <input type="submit" class="btn btn-block btn-large btn-primary" value="Sign in" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div><!--/Sign In-->
+        </div><!-- /row -->
+    </div><!-- /container -->
+    
+    <!-- modal recover -->
+    <div id="modal-recover" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modal-recoverLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="modal-recoverLabel">Reset password</h3>
+        </div>
+        <div class="modal-body">
+            <form wicket:id="reset-password-form" id="form-recover" method="post">
+                <div class="control-group">
+                    <div class="controls">
+                        <input wicket:id="username" type="text" data-validate="{required: true, email:true, messages:{required:'Please enter field email', email:'Please enter a valid email address'}}" name="recover" />
+                        <p class="help-block helper-font-small">Enter your email address and we will send you a link to reset your password.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <input type="submit" form="form-recover" class="btn btn-primary" value="Send reset link" >
+        </div>
+    </div><!-- /modal recover-->
+</wicket:extend>
+</body>
+</html>

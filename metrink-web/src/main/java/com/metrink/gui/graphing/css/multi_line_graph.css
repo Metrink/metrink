@@ -1,0 +1,61 @@
+@CHARSET "ISO-8859-1";
+svg {
+  fill: #555555;
+  font-size: 14px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.axis {
+  font-size: 11px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: lightgrey;
+  stroke-dasharray: 3 3;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.x.axis g.tick:first-child text,
+.x.axis g.tick:last-of-type text {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1px;
+}
+
+.dot {
+  stroke-width: 0px;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  line-height: 20px;
+  padding: 5px 7px;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  
+  background-color: #FAFAFA;
+  background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
+  background-repeat: repeat-x;
+  border: 1px solid #D4D4D4;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+}
+div.tooltip span.heading {
+    font-size: 1.5em;
+
+    display: block;
+}
+div.tooltip span.value {
+    color: #555555;
+}

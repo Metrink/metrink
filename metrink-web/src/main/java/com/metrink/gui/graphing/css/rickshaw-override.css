@@ -1,0 +1,38 @@
+.rickshaw_graph .x_tick.plain div.title {
+    /* shift the x-axis text underneath the graph */
+    bottom: -2em;
+}
+
+.rickshaw_legend {
+    /* override default white on black styling */
+    background: none;
+    color: black;
+    /* shift the legend down to avoid overlapping the x-axis */
+    margin-top: 1em;
+}
+.rickshaw_legend .line {
+    /* display legend entries in columns */
+    clear: none;
+    float: left;
+    width: 300px;
+}
+.rickshaw_graph .detail .data {
+    /* prevent detail_swatch overlapping with text */
+    margin-right: 15px;
+}
+.rickshaw_graph .detail .date {
+    /* keep the visual focus on the data, not the date */
+    color: #aaaaaa;
+}
+.rickshaw_graph .detail .detail_swatch {
+    /* put the color of the line to the upper right */
+    float: right;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+.rickshaw_graph .detail .x_label {
+    /* hide the time label displayed along the top */
+    display: none;
+}

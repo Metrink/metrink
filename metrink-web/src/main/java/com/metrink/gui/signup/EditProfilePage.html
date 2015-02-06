@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+    <div class="container">
+        <div class="row-fluid">
+            <!--Sign Up-->
+            <div class="span6 offset3">
+            <div class="box corner-all">
+                <div class="box-header grd-green color-white corner-top">
+                    <span>Edit Profile</span>
+                </div>
+                <div class="box-body bg-white">
+                    <form wicket:id="register-form" id="sign-up" method="post">
+                        <div class="control-group">
+                            <label class="control-label">Name</label>
+                            <div class="controls">
+                                <input wicket:id="name" type="text" class="input-block-level" data-validate="{required: true, messages:{required:'Please enter your name'}}" id="name" autocomplete="off" />
+                            </div>
+                        </div>
+                        <wicket:enclosure>
+                        <div class="control-group">
+                            <label class="control-label">Email</label>
+                            <div class="controls">
+                                <input wicket:id="username" type="text" class="input-block-level" data-validate="{required: true, email:true, messages:{required:'Please enter an email address', email:'Please enter a valid email address'}}" id="email" autocomplete="off" />
+                                <p class="help-block muted helper-font-small"><strong>Type carefully.</strong> You will log into your account using your this address. Additionally, you will be sent a confirmation email which must be validated within 10 days.</p>
+                            </div>
+                        </div>
+                        </wicket:enclosure>
+                        <wicket:enclosure child="password">
+                        <div class="control-group">
+                            <label class="control-label">Password</label>
+                            <div class="controls">
+                                <input wicket:id="password" type="password" class="input-block-level" data-validate="{required: true, minlength: 6, messages:{required:'Please enter a password', minlength:'Please enter at least 6 characters.'}}" id="password" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Verify Password</label>
+                            <div class="controls">
+                                <input wicket:id="verifyPassword" type="password" class="input-block-level" data-validate="{required: true, equalTo: '#password', messages:{required:'Please reenter your password', equalTo: 'Confirmation password does not match the password'}}" id="verifyPassword" autocomplete="off" />
+                            </div>
+                        </div>
+                        </wicket:enclosure>
+                        <div class="form-actions">
+                            <input id="create-account-button" type="submit" class="btn btn-block btn-large btn-success" value="Update Profile" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div><!-- /row -->
+    </div><!-- /container -->
+</wicket:extend>
+</body>
+</html>

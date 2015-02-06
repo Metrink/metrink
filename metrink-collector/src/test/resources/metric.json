@@ -1,0 +1,8 @@
+{
+    "group": "localhost",
+    "sub": "system",
+    "timestamp": 1361989501,
+    "metric": "cpu",
+    "value": 75,
+    "units": "%"
+}

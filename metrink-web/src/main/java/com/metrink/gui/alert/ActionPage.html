@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>Metrink</title>
+</head>
+<body>
+    <wicket:extend>
+    
+        <form wicket:id="form" class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for="action-name">Name</label>
+            <div class="controls">
+              <input type="text" wicket:id="action-name">
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <label class="control-label" for="action-type">Type</label>
+            <div class="controls">
+              <select wicket:id="action-type"></select>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <label class="control-label" for="action-value">Value</label>
+            <div class="controls">
+              <input type="text" wicket:id="action-value">
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <div class="controls">
+              <input type="submit" wicket:id="update-button" class="btn"/>
+              <button wicket:id="cancel-button" class="btn">Cancel</button>
+            </div>
+          </div>
+        </form>
+        
+        <h3>Actions</h3>
+        <table class="table table-bordered table-condensed" wicket:id="actions-table"></table>
+        
+        <wicket:fragment wicket:id="link-fragment">
+          <a wicket:id="link" style="color: blue; text-decoration: underline;"><span wicket:id="text"></span></a>
+        </wicket:fragment>
+        <wicket:fragment wicket:id="delete-fragment">
+            <a wicket:id="delete">Delete</a>
+        </wicket:fragment>        
+        
+	</wicket:extend>
+</body>
+</html>

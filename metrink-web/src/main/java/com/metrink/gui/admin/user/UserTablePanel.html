@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>Metrink</title>
+</head>
+<body>
+    <wicket:panel>
+        <div id="datatables_wrapper" class="dataTables_wrapper form-inline" role="grid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="dataTables_filter pull-right" id="datatables_filter">
+                        <form wicket:id="search-form" style="margin: 0;" class="form-inline">
+                            <div class="input-append">
+                                <!-- <label>Search: <input wicket:id="search" type="text" aria-controls="datatables"></label> -->
+                                <input wicket:id="search" placeholder="Search for user..." type="text" aria-controls="datatables">
+                            </div>
+          
+                            <input type="submit" wicket:id="clear-button" value="Clear" class="btn btn-primary"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <table wicket:id="user-table" class="table table-bordered table-striped responsive dataTable"></table>
+            <wicket:fragment wicket:id="name-fragment">
+                <a wicket:id="name-link"><span wicket:id="name"></span></a>
+            </wicket:fragment>
+        </div>
+    </wicket:panel>
+</body>
+</html>

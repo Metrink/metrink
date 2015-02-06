@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>Metrink</title>
+</head>
+<body>
+    <wicket:extend>
+    
+        <form wicket:id="form" class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for="access-key">Access Key ID</label>
+            <div class="controls">
+              <input type="text" wicket:id="access-key"></input>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <label class="control-label" for="secret-key">Secret Access Key</label>
+            <div class="controls">
+              <input type="text" wicket:id="secret-key"></input>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <div class="controls">
+              <button wicket:id="fetch-button" class="btn">Fetch Metric List</button>
+            </div>
+          </div>
+        </form>
+
+	</wicket:extend>
+</body>
+</html>

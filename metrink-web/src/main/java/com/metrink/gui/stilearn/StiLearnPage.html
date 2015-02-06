@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+</head>
+<body>
+<wicket:extend>
+    <div class="row-fluid">
+        <!-- span side-left -->
+        <div class="span1">
+            <!--side bar-->
+            <aside class="side-left">
+                <ul class="sidebar">
+                    <!--always define class .first for first-child of li element sidebar left-->
+                    <li class="first">
+                        <a href="/dashboards">
+                            <div class="helper-font-24"><i class="typicn-grid"></i></div>
+                            <span class="sidebar-text">Dashboards</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/graphing">
+                            <div class="helper-font-24"><i class="typicn-lineChart"></i></div>
+                            <span class="sidebar-text">Graphing</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/alerts">
+                            <div class="helper-font-24"><i class="icofont-warning-sign"></i></div>
+                            <span class="sidebar-text">Alerting</span>
+                        </a>
+                        <ul class="sub-sidebar corner-top">
+                            <li>
+                                <a href="/alerts">
+                                  <div class="helper-font-24"><i class="icofont-bell"></i></div>
+                                  <span class="sidebar-text">Alerts</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/actions">
+                                  <div class="helper-font-24"><i class="icofont-bolt"></i></div>
+                                  <span class="sidebar-text">Actions</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/search">
+                            <div class="helper-font-24"><i class="typicn-views"></i></div>
+                            <span class="sidebar-text">Search</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/integrated/documentation/">
+                            <div class="helper-font-24"><i class="icofont-question-sign"></i></div>
+                            <span class="sidebar-text">Help</span>
+                        </a>
+                        <ul class="sub-sidebar corner-top">
+                            <li>
+                                <a href="/integrated/documentation/getting-started">
+                                  <div class="helper-font-24"><i class="typicn-cog"></i></div>
+                                  <span class="sidebar-text">Setup</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/integrated/documentation/query-language">
+                                  <div class="helper-font-24"><i class="typicn-lineChart"></i></div>
+                                  <span class="sidebar-text">Graphing</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/integrated/documentation/alerting">
+                                  <div class="helper-font-24"><i class="icofont-bell"></i></div>
+                                  <span class="sidebar-text">Alerts</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li wicket:id="admin-menu">
+                        <a href="/admin">
+                            <div class="helper-font-24"><i class="typicn-lock"></i></div>
+                            <span class="sidebar-text">Admin</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside><!--/side bar -->
+        </div><!-- span side-left -->
+        
+        <!-- span content -->
+        <div class="span11">
+            <!-- content -->
+            <div class="content content-large">
+                <!-- content-header -->
+                <div class="content-header">
+                    <h2>
+                        <i class="icofont-home"></i> <wicket:container wicket:id="title"/>
+                    </h2>
+                </div><!-- /content-header -->
+                
+                <wicket:remove>
+                <!-- content-breadcrumb -->
+                <div class="content-breadcrumb">
+                    <!--breadcrumb-->
+                    <ul class="breadcrumb">
+                        <li><a href="index.html"><i class="icofont-home"></i> Dashboard</a> <span class="divider">&rsaquo;</span></li>
+                        <li class="active">Data elements</li>
+                    </ul><!--/breadcrumb-->
+                </div><!-- /content-breadcrumb -->
+                </wicket:remove>
+                
+                <!-- content-body -->
+                <div class="content-body">
+                    <div wicket:id="feedback">message</div>
+                    <wicket:child />
+                </div><!--/content-body -->
+            </div><!-- /content -->
+        </div><!-- /span content -->
+        
+    </div><!-- /row -->
+</wicket:extend>
+</body>
+</html>

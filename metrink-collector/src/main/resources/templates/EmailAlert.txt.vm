@@ -1,0 +1,11 @@
+Metrink Alert
+
+"$metric" triggered $alertQuery
+
+View graph:
+
+$graphLink
+
+View graph with correlations:
+
+$graphLinkCorrelated
