@@ -1,7 +1,0 @@
-@CHARSET "UTF-8";
-
-.typeahead {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 300px;
-}

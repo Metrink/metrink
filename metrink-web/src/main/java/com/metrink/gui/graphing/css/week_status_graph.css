@@ -1,8 +1,0 @@
-@CHARSET "ISO-8859-1";
-.rickshaw_graph .x_ticks_d3 text {
-  font-size: 26px;
-}
-
-.x_grid_d3 {
-  opacity: 0;
-}
